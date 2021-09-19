@@ -1,0 +1,52 @@
+{
+  "name": "react-native-image-slider-banner",
+  "version": "1.0.0",
+  "description": "A simple and fully customizable React Native Component that implements Image and Banner Slider UI with animations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react-native-vector-icons": "^8.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mudassirraza912/react-native-image-slider-banner.git"
+  },
+  "keywords": [
+    "react-native-image-slider-banner",
+    "react-native-image-slider",
+    "react-native-image-slider-box",
+    "react-native-image-banner",
+    "react-native-animated-image-slider",
+    "react-native-image-slider-animation",
+    "react-native-image-carousel",
+    "react-native-slider",
+    "react-native-image-swiper",
+    "react-native-image-paging-slider",
+    "image",
+    "slider",
+    "image-slider",
+    "rn-image-slider",
+    "react-native-slider",
+    "react native slider",
+    "react native image",
+    "react native image slider",
+    "react native",
+    "native",
+    "react",
+    "ios",
+    "android",
+    "mobile",
+    "React Native Component",
+    "react-components",
+    "react-native-component",
+    "react-native-library"
+  ],
+  "author": "Mudassir Raza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mudassirraza912/react-native-image-slider-banner/issues"
+  },
+  "homepage": "https://github.com/Mudassirraza912/react-native-image-slider-banner#readme"
+}
