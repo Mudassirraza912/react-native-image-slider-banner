@@ -11,9 +11,12 @@
 
 ---
 
-![IOS Demo](assets/ios-demo.mov)
+## IOS DEMO
+https://user-images.githubusercontent.com/39431881/134768485-61c9a7a5-236e-493a-b5e8-e623b995eb61.mp4
 
-![Android Demo](assets/android-demo.mp4)
+
+## ANDROID DEMO
+https://user-images.githubusercontent.com/39431881/134768557-17ac11c8-f7ea-4d82-8c15-47f3a750149a.mp4
 
 ## Install
 
@@ -42,7 +45,7 @@ Well-done.
 | previewImageStyle               | Style object              |       for change style of previewImage
 | caroselImageContainerStyle               | Style object              |       for change style of caroselImageContainer
 | caroselImageStyle               | Style object              |       for change style of caroselImage
-| autoPlay               | Boolean `default (true)`            |       for auto scrolling
+| autoPlay               | Boolean `default (false)`            |       for auto scrolling
 |  timer               | Number `default 2000`            |       timeinterval for changing slider
 | showIndicator               | Boolean `default (true)` |       for Showing indicator
 activeIndicatorStyle               | Style object              |       for change style of activeIndicator
@@ -51,7 +54,7 @@ activeIndicatorStyle               | Style object              |       for chang
 | onItemChanged               | Callback    `((itemData) => {},)`              |       when item changed its give item data in parameter
 | onClick               | Callback    `((item, index) => {},)`              |       when click on any item its give item data in parameter and when onClick Present so slider not show `IMAGE PREVIEW` on Click
 |  closeIconColor               | colorCode    `#000`              |       Image Preview cross icon color
-|
+| blurRadius               | Number   `default (50)`             |       Image Preview Background Blur Radius
 
 ### 1- add below import in your code :
 

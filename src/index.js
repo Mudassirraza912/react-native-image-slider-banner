@@ -24,16 +24,17 @@ export const ImageSlider = ({
     caroselImageStyle={},
     caroselImageContainerStyle={},
     timer=2000,
-    autoPlay=true,
+    autoPlay=false,
     showIndicator=true,
     activeIndicatorStyle={},
     inActiveIndicatorStyle={},
     indicatorContainerStyle={},
-    onItemChanged=(itemDate) => {},
+    onItemChanged=(itemData) => {},
     localImg= false,
     onClick=null,
     children,
-    closeIconColor="#000"
+    closeIconColor="#000",
+    blurRadius=50
 }) => {
     const scrollX = React.useRef(new Animated.Value(0)).current
     const imageW = width * 0.7;
@@ -123,7 +124,7 @@ export const ImageSlider = ({
                                     key={`image-${ind}`}
                                     source={localImg ? val.img : {uri: val.img}}
                                     style={[StyleSheet.absoluteFillObject, {opacity}]}
-                                    blurRadius={50}
+                                    blurRadius={blurRadius}
                                     
                                 />
                             )
@@ -141,6 +142,7 @@ export const ImageSlider = ({
                         horizontal
                         pagingEnabled
                         initialScrollIndex={selectedIndex}  
+                        pinchGestureEnabled={true}
                         onScrollToIndexFailed={info => {
                             const wait = new Promise(resolve => setTimeout(resolve, 500));
                             wait.then(() => {
@@ -185,7 +187,7 @@ export const ImageSlider = ({
                 pagingEnabled
                 snapToInterval={width}
                 decelerationRate="fast"
-                // initialScrollIndex={selectedIndex}
+                pinchGestureEnabled={true}
                 showsHorizontalScrollIndicator={false}
                 onViewableItemsChanged={onViewRef.current}
                 viewabilityConfig={viewConfigRef.current}
