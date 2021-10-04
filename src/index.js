@@ -58,10 +58,6 @@ export const ImageSlider = ({
         if(autoPlay) {
             startAutoPlay()
         }
-        BackHandler.addEventListener("hardwareBackPress", backAction);
-        return () => {
-            BackHandler.removeEventListener("hardwareBackPress", backAction);
-        };
     }, []);
 
     useEffect(() => {
@@ -71,10 +67,6 @@ export const ImageSlider = ({
             }
         }
     }, [currentIndex, imageViewer]);
-
-    const backAction = () => {
-        setImageViewer(!imageViewer)
-    };
 
     const changeSliderListIndex = () => {
         if (slider.current) {
@@ -107,6 +99,7 @@ export const ImageSlider = ({
             <Modal
                 visible={imageViewer}
                 onDismiss={() => setImageViewer(!imageViewer)}
+                onRequestClose={() => setImageViewer(!imageViewer)}
             >
                     <View style={StyleSheet.absoluteFillObject}>
                         {data.map((val, ind) => {
