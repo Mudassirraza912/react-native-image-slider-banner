@@ -56,14 +56,16 @@ export const ImageSlider = ({
 
     useEffect(() => {
         if(autoPlay) {
-            startAutoPlay()
+            if (data.length > 0)
+                startAutoPlay()
         }
     }, []);
 
     useEffect(() => {
         if(!imageViewer) {
             if(autoPlay) {
-                startAutoPlay()
+                if (data.length > 0)
+                    startAutoPlay()
             }
         }
     }, [currentIndex, imageViewer]);
