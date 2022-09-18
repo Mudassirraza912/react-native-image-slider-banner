@@ -1,5 +1,6 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, ViewStyle } from 'react-native'
+import { DataType } from '.'
 
 
 export const Indicator = ({
@@ -8,6 +9,12 @@ export const Indicator = ({
     activeIndicatorStyle={},
     inActiveIndicatorStyle={},
     indicatorContainerStyle={}
+}:{
+ data: DataType[]
+ currenIndex: number
+ activeIndicatorStyle: ViewStyle
+ inActiveIndicatorStyle: ViewStyle
+ indicatorContainerStyle: ViewStyle
 }) => {
     return (
         <View style={[styles.main, indicatorContainerStyle]}>
@@ -27,7 +34,10 @@ const styles = StyleSheet.create({
     main: {
         flexDirection: 'row', 
         alignItems: 'center',
+        alignSelf: 'center',
         justifyContent: 'center',
+        position: 'absolute',
+        bottom: 20
     },
     activeIndicatorStyle : {
         height: 5,

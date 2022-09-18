@@ -2,6 +2,11 @@
 
 [![npm](https://img.shields.io/npm/v/react-native-image-slider-banner.svg)](https://www.npmjs.com/package/react-native-image-slider-banner)  ![npm](https://img.shields.io/npm/dt/react-native-image-slider-banner.svg)
 
+___
+<h2 align="center">Support 💰</h2>
+<p align="center">
+<a href="https://www.buymeacoffee.com/razamudassir912" target="_blank"> <img align="center" src="https://raw.githubusercontent.com/Mudassirraza912/Mudassirraza912/master/src/images/social/buymeacoffee.png" height="34" border="0" alt="Mudassir Raza" /></a>
+</p>
 
 <!-- > `Announce`: All Pull-Requests have been applied. 
 >> CI/CD has been integrated to update the package automatically.
@@ -12,11 +17,14 @@
 ---
 
 ## IOS DEMO
-https://user-images.githubusercontent.com/39431881/134768485-61c9a7a5-236e-493a-b5e8-e623b995eb61.mp4
+<!-- <img src="https://github.com/Mudassirraza912/Mudassirraza912/blob/master/src/gifs/reactNativeImageSliderBannerIOSDemo.gif" height="32px" /> -->
+<img src="https://github.com/Mudassirraza912/Mudassirraza912/blob/master/src/gifs/reactNativeImageSliderBannerIOSDemo.gif?raw=true" height="500" alt="IOS Demo" />
+
+
 
 
 ## ANDROID DEMO
-https://user-images.githubusercontent.com/39431881/134768557-17ac11c8-f7ea-4d82-8c15-47f3a750149a.mp4
+<img src="https://github.com/Mudassirraza912/Mudassirraza912/blob/master/src/gifs/reactNativeImageSliderBannerAndroidDemo.gif?raw=true" height="500" alt="Android Demo" />
 
 ## Install
 
@@ -52,9 +60,10 @@ activeIndicatorStyle               | Style object              |       for chang
 | inActiveIndicatorStyle               | Style object              |       for change style of inActiveIndicator
 | indicatorContainerStyle               | Style object              |       for change style of indicatorContainer
 | onItemChanged               | Callback    `((itemData) => {},)`              |       when item changed its give item data in parameter
-| onClick               | Callback    `((item, index) => {},)`              |       when click on any item its give item data in parameter and when onClick Present so slider not show `IMAGE PREVIEW` on Click
+| onClick               | Callback    `((item, index) => {},)`              |       when click on any item its give item data in parameter 
 |  closeIconColor               | colorCode    `#000`              |       Image Preview cross icon color
 | blurRadius               | Number   `default (50)`             |       Image Preview Background Blur Radius
+|preview               | Boolean   `default true`             |       when preivew is false so slider not show `IMAGE PREVIEW` and then  onClick works
 
 ### 1- add below import in your code :
 
@@ -63,7 +72,7 @@ import { ImageSlider } from "react-native-image-slider-banner";
 ```
 
 ### 2- Show Simple Slider with Image Preview option enable Example
-![ImageCarousel](assets/simple.png)
+![ImageCarousel](https://github.com/Mudassirraza912/Mudassirraza912/blob/master/src/images/assets/simple.png?raw=true)
 ```js
 <ImageSlider 
     data={[
@@ -79,7 +88,7 @@ import { ImageSlider } from "react-native-image-slider-banner";
 
 ### 3- Show Slider with Header and onClick Example
 
-![ImageCarousel](assets/withHeader.png)
+![ImageCarousel](https://github.com/Mudassirraza912/Mudassirraza912/blob/master/src/images/assets/withHeader.png?raw=true)
 
 ```js
 <ImageCarousel 
@@ -89,36 +98,36 @@ import { ImageSlider } from "react-native-image-slider-banner";
         {img: 'https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg'}
     ]}
     showHeader
-    headerLeftComponent={<Icon name="arrow-back" color="#fff" size={34} onPress={() => Alert.alert("alert")}/>}
-    headerCenterComponent={<Text style={{color: '#fff', fontSize: 24, fontWeight: 'bold'}}>Header</Text>}
-    headerStyle={{padding: 10, backgroundColor: 'rgba(0,0,0, 0.6)',}}
+    preview={false}
+    headerLeftComponent={<Icon name="arrow-back" color="#fff" size={34} onPress={() => Alert.alert("alert")} />}
+    headerCenterComponent={<Text style={{ color: '#fff', fontSize: 24, fontWeight: 'bold' }}>Header</Text>}
+    headerStyle={{ padding: 10, backgroundColor: 'rgba(0,0,0, 0.6)', }}
     onItemChanged={(item) => console.log("item", item)}
-    onClick={(item, index) => {alert('hello'+index)}}
-    caroselImageStyle={{height: 210}}
-    indicatorContainerStyle={{top: 50}}
+    caroselImageStyle={{ resizeMode: 'cover' }}
+    onClick={(item, index) => { alert('hello' + index) }}
     />
 ```
 
-### 4-  Show Slider with Header Chilren and onClick Example
+### 4-  Show Slider with Header, Children and onClick Example
 
-![ImageCarousel](assets/withHeaderAndChildren.png)
+![ImageCarousel](https://github.com/Mudassirraza912/Mudassirraza912/blob/master/src/images/assets/withHeaderAndChildren.png?raw=true)
 
 ```js
  <ImageCarousel 
     data={[
-        {img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5a5uCP-n4teeW2SApcIqUrcQApev8ZVCJkA&usqp=CAU'},
-        {img: 'https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg'},
-        {img: 'https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg'}
+        { img: require('../../assets/images/slider1.png') },
+        { img: require('../../assets/images/slider2.png') },
+        { img: require('../../assets/images/slider1.png') }
     ]}
+    localImg
     showHeader
-    headerLeftComponent={<Icon name="arrow-back" color="#fff" size={34} onPress={() => Alert.alert("alert")}/>}
-    headerRightComponent={<Icon name="share" color="#fff" size={34} onPress={() => Alert.alert("alert")}/>}
-    headerCenterComponent={<Text style={{color: '#fff', fontSize: 24, fontWeight: 'bold'}}>Title</Text>}
-    headerStyle={{padding: 10, backgroundColor: 'rgba(0,0,0, 0.6)',}}
+    preview={false}
+    headerLeftComponent={<Icon name="arrow-back" color="#fff" size={34} onPress={() => Alert.alert("alert")} />}
+    headerCenterComponent={<Text style={{ color: '#fff', fontSize: 24, fontWeight: 'bold' }}>Header</Text>}
+    headerStyle={{ padding: 10, backgroundColor: 'rgba(0,0,0, 0.6)', }}
     onItemChanged={(item) => console.log("item", item)}
-    onClick={(item, index) => {alert('hello'+index)}}
-    caroselImageStyle={{height: 210}}
-    indicatorContainerStyle={{bottom: 20}}
+    caroselImageStyle={{ resizeMode: 'cover' }}
+    onClick={(item, index) => { alert('hello' + index) }}
     >
             <View style={{alignItems: 'center'}}>
                 <Text style={{color: '#000', fontSize: 24, fontWeight: 'bold'}}>Title</Text>
@@ -130,6 +139,6 @@ import { ImageSlider } from "react-native-image-slider-banner";
 
 # Contribute And Update the Library
 
-## Please subscribe and contribute with me to develop this lib
+## Please subscribe and contribute with me to develop this library
 
 ### License MIT
