@@ -1,10 +1,10 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions } from 'react-native'
 
 const width = Dimensions.get('screen').width
 export const styles = StyleSheet.create({
     caroselImageStyle : {
         width: width, 
-        resizeMode: 'cover', 
+        resizeMode: 'contain', 
         height: 300
     },
     previewImageContainerStyle: {
@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     },
     previewImageStyle: {
         width: width, 
-        resizeMode: 'cover', 
+        resizeMode: 'contain', 
         height: 400
     }
 
