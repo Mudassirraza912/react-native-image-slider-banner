@@ -34,6 +34,10 @@ ___
 
    > yarn add react-native-image-slider-banner
 
+2. Edit `android/app/build.gradle` and add the following line:
+
+   > apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
 Well-done.
 
 ## Usage :
